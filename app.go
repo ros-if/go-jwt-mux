@@ -5,8 +5,10 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/roshif-study/task-5-vix-btpns--ROSHIF-/controllers/authcontroller"
-	"github.com/roshif-study/task-5-vix-btpns--ROSHIF-/models"
+	"github.com/ros-if/jwt/controllers/authcontroller"
+	"github.com/ros-if/jwt/controllers/productcontroller"
+	"github.com/ros-if/jwt/middlewares"
+	"github.com/ros-if/jwt/models"
 )
 
 func main() {
@@ -14,9 +16,14 @@ func main() {
 	models.ConnectDatabase()
 	r := mux.NewRouter()
 
-	r.HandleFunc("users/register", authcontroller.Register).Methods("POST")
-	r.HandleFunc("users/login", authcontroller.Login).Methods("POST")
-	r.HandleFunc("users/logout", authcontroller.Logout).Methods("GET")
+	r.HandleFunc("/register", authcontroller.Register).Methods("POST")
+	r.HandleFunc("/login", authcontroller.Login).Methods("POST")
+	r.HandleFunc("/logout", authcontroller.Logout).Methods("GET")
+
+	api := r.PathPrefix("/api").Subrouter()
+	api.HandleFunc("/products", productcontroller.Index).Methods("GET")
+	api.Use(middlewares.JWTMiddleware)
+
 
 	log.Fatal(http.ListenAndServe(":8080", r))
 

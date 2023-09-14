@@ -10,7 +10,7 @@ import (
 var DB *gorm.DB
 
 func ConnectDatabase()  {
-	db, err := gorm.Open(mysql.Open("root:1234@tcp(localhost:3306)/task_btpn"))
+	db, err := gorm.Open(mysql.Open("root:1234@tcp(localhost:3306)/go_jwt_mux"))
 	if err != nil {
 		fmt.Println("Gagal terhubung ke database")	
 	}
