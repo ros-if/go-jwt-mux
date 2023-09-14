@@ -1,4 +1,4 @@
-module github.com/ros-if/jwt
+module github.com/ros-if/go-jwt-mux
 
 go 1.21.0
 
