@@ -5,10 +5,10 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/ros-if/jwt/controllers/authcontroller"
-	"github.com/ros-if/jwt/controllers/productcontroller"
-	"github.com/ros-if/jwt/middlewares"
-	"github.com/ros-if/jwt/models"
+	"github.com/ros-if/go-jwt-mux/controllers/authcontroller"
+	"github.com/ros-if/go-jwt-mux/controllers/productcontroller"
+	"github.com/ros-if/go-jwt-mux/middlewares"
+	"github.com/ros-if/go-jwt-mux/models"
 )
 
 func main() {

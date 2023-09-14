@@ -3,7 +3,7 @@ package productcontroller
 import (
 	"net/http"
 
-	"github.com/ros-if/jwt/helper"
+	"github.com/ros-if/go-jwt-mux/helper"
 )
 
 func Index(w http.ResponseWriter, r *http.Request) {

@@ -6,9 +6,9 @@ import (
 	"time"
 
 	"github.com/golang-jwt/jwt/v4"
-	"github.com/ros-if/jwt/config"
-	"github.com/ros-if/jwt/helper"
-	"github.com/ros-if/jwt/models"
+	"github.com/ros-if/go-jwt-mux/config"
+	"github.com/ros-if/go-jwt-mux/helper"
+	"github.com/ros-if/go-jwt-mux/models"
 	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm"
 )
