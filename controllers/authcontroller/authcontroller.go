@@ -72,7 +72,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 	claims := &config.JWTClaim{
 		Username: user.Username,
 		RegisteredClaims: jwt.RegisteredClaims{
-			Issuer: "go-jwt-mux",
+			Issuer: "jwt",
 			ExpiresAt: jwt.NewNumericDate(expTime),
 		},
 	}
